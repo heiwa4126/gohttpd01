@@ -9,7 +9,7 @@ install_systemd() {
     install -o root -g root -m 0644 "scripts/initscript/$ID.service" /lib/systemd/system/
     systemctl daemon-reload
     systemctl enable "$ID" --now
-    systemctl status "$ID"
+    systemctl status "$ID" -l
 }
 
 install_rh6() {

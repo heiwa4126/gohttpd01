@@ -1,5 +1,5 @@
 [Unit]
-Description=example httpd server in Golang.
+Description=example http server in Golang.
 After=network.target
 
 [Service]
