@@ -1,6 +1,6 @@
 # gohttpd01
 
-[最新リリース](/releases/latest)の状態は ![GitHub Actionsでエラーなくビルドできたかを示すバッチ](https://github.com/heiwa4126/gohttpd01/workflows/Go/badge.svg) 
+[最新リリース](//github.com/heiwa4126/gohttpd01/releases/latest)の状態は ![GitHub Actionsでエラーなくビルドできたかを示すバッチ](https://github.com/heiwa4126/gohttpd01/workflows/Go/badge.svg) 
 
 Goでデーモンを書いて、systemdの下で動かすテンプレート。
 
