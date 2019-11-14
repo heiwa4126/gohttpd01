@@ -48,6 +48,6 @@ func main() {
 	log.Println("gohttpd01 started.")
 
 	if err := Start(); err != nil {
-		log.Fatal(err1)
+		log.Fatal(err)
 	}
 }
