@@ -32,3 +32,11 @@ sudo scripts/remove.sh
 - [Integration of a Go service with systemd: readiness & liveness | Vincent Bernat](https://vincent.bernat.ch/en/blog/2017-systemd-golang)
 - [sd_notify](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 - [go-systemd/sdnotify.go at master · coreos/go-systemd](https://github.com/coreos/go-systemd/blob/master/daemon/sdnotify.go)
+
+# その他メモ
+
+GitHub Actionsで、リリースをpublishしたときに動くアクションをつけてみた。
+git tagして、releasesを書いたときに(あるいは[API](https://developer.github.com/v3/repos/releases/))トリガされる。
+Ubutu環境でbuildしてエラーがなければOKになる。このページの一番上に[バッジ](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository)が貼ってある。
+
+
