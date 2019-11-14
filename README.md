@@ -38,5 +38,5 @@ sudo scripts/remove.sh
 GitHub Actionsで、リリースをpublishしたときに動くアクションをつけてみた。
 git tagして、releasesを書いたときに(あるいは[API](https://developer.github.com/v3/repos/releases/))トリガされる。
 Ubutu環境でbuildしてエラーがなければOKになる。このページの一番上に[バッジ](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository)が貼ってある。
-
+ほんとは「buildしてエラーがなければ」だけでなく、「テストしてエラーがなければ」も要るので、おいおい追加していく。
 
