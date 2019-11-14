@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/heiwa4126/gohttpd01/daemon" // `go get github.com/coreos/go-systemd` failed on go module
+	"log"
 	"net/http"
 	"time"
-	"log"
-	"github.com/heiwa4126/gohttpd01/daemon" // `go get github.com/coreos/go-systemd` failed on go module
 )
 
 func Start() error {
@@ -12,7 +12,7 @@ func Start() error {
 
 	http.HandleFunc("/",
 		func(writer http.ResponseWriter, request *http.Request) {
-			res := append( []byte(time.Now().Format(layout)), 0x0a)
+			res := append([]byte(time.Now().Format(layout)), 0x0a)
 			writer.Write(res)
 		})
 
@@ -33,13 +33,21 @@ func Start() error {
 	// 準備完了をsystemdに送信
 	daemon.SdNotify(false, daemon.SdNotifyReady)
 
-	http.ListenAndServe(":8080", nil)
-	return nil
+	// httpサーバ開始
+	// タイムアウトを指定しないと危険なので
+	// http.ListenAndServe(":8081",nil)
+	// とはしない。
+	return (&http.Server{
+		Addr:              ":8081",
+		ReadHeaderTimeout: 5 * time.Second,
+	}).ListenAndServe()
 }
 
 func main() {
 	log.SetFlags(log.Flags() &^ (log.Ldate | log.Ltime)) // for systemd
-	log.Println("auditconv started.")
+	log.Println("gohttpd01 started.")
 
-	Start()
+	if err := Start(); err != nil {
+		log.Fatal(err)
+	}
 }

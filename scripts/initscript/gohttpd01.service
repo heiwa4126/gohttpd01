@@ -1,0 +1,16 @@
+[Unit]
+Description=example httpd server in Golang.
+After=network.target
+
+[Service]
+# Type=simple
+Type=notify
+ExecStart=/usr/local/sbin/gohttpd01
+WorkingDirectory=/tmp
+# Restart=always
+Restart=on-watchdog
+WatchdogSec=60
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
