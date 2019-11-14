@@ -1,10 +1,11 @@
 # gohttpd01
 
+![GitHub Actionsでエラーなくビルドできたかを示すバッチ](https://github.com/heiwa4126/gohttpd01/workflows/Go/badge.svg) 
+
 Goでデーモンを書いて、systemdの下で動かすテンプレート。
 
 動作は「8081/tcpでhttpを受けてローカルタイムを返す」だけ。
 systemdのwatchdogなどに対応している。
-
 
 # 開発中のbuild
 
